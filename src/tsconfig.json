@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "../dist/",
+    "noImplicitAny": true,
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@lib/*": ["lib/*"]
+    },
+    "rootDir": ".",
+    "sourceMap": true,
+    "inlineSources": true,
+    "lib": ["es6", "dom"],
+    "target": "es5",
+    "skipLibCheck": true,
+    "types": ["node", "jasmine"]
+  },
+  "exclude": [],
+  "bazelOptions": {
+    "suppressTsconfigOverrideWarnings": true
+  }
+}
