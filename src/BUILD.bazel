@@ -1,4 +1,5 @@
 load("@build_bazel_rules_nodejs//:defs.bzl", "rollup_bundle")
+load("@npm_bazel_typescript//:index.bzl", "ts_devserver")
 
 exports_files(
     ["tsconfig.json"],
@@ -7,6 +8,16 @@ exports_files(
 
 rollup_bundle(
     name = "app_bundle",
+    enable_code_splitting = False,
     entry_point = "//src/app:birthday_card.ts",
     deps = ["//src/app"],
+)
+
+ts_devserver(
+    name = "devserver",
+    index_html = "index.html",
+    port = 4200,
+    deps = [
+        ":app_bundle.es2015.js",
+    ],
 )
