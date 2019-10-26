@@ -1,7 +1,13 @@
 load("@npm_bazel_typescript//:index.bzl", "ts_library")
 
+exports_files(
+    ["birthday_card.ts"],
+    visibility = ["//visibility:public"],
+)
+
 ts_library(
     name = "app",
     srcs = [":birthday_card.ts"],
+    visibility = ["//visibility:public"],
     deps = ["//src/lib"],
 )

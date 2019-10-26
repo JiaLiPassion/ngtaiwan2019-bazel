@@ -1,4 +1,12 @@
+load("@build_bazel_rules_nodejs//:defs.bzl", "rollup_bundle")
+
 exports_files(
     ["tsconfig.json"],
     visibility = ["//visibility:public"],
+)
+
+rollup_bundle(
+    name = "app_bundle",
+    entry_point = "//src/app:birthday_card.ts",
+    deps = ["//src/app"],
 )

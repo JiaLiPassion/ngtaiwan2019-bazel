@@ -5,3 +5,6 @@ import { User } from '../lib';
 export function printBirthdayGreeting(user: User) {
   console.log(`Happy birthday ${user.name}, ${user.birthday} is your day!`);
 }
+
+const user = new User('testUser', new Date(2000, 1, 1));
+printBirthdayGreeting(user);
