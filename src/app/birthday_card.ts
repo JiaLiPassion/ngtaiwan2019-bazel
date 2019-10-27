@@ -8,3 +8,7 @@ export function printBirthdayGreeting(user: User) {
 
 const user = new User('testUser', new Date(2000, 1, 1));
 printBirthdayGreeting(user);
+
+if (typeof document !== 'undefined') {
+  document.getElementById('user').innerHTML = `${user.name}`;
+}

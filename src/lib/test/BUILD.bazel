@@ -1,0 +1,23 @@
+load("@npm_bazel_jasmine//:index.bzl", "jasmine_node_test")
+load("@npm_bazel_typescript//:index.bzl", "ts_library")
+load("@npm_bazel_karma//:index.bzl", "karma_web_test_suite")
+
+ts_library(
+    name = "test_lib",
+    testonly = True,
+    srcs = [":date.spec.ts"],
+    deps = [
+        "//src/lib:date",
+        "@npm//@types/jasmine",
+    ],
+)
+
+jasmine_node_test(
+    name = "test",
+    deps = [":test_lib"],
+)
+
+karma_web_test_suite(
+    name = "test_web",
+    deps = [":test_lib"],
+)

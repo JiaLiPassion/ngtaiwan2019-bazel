@@ -1,0 +1,20 @@
+load("@npm_bazel_protractor//:index.bzl", "protractor_web_test_suite")
+load("@npm_bazel_typescript//:index.bzl", "ts_library")
+
+ts_library(
+    name = "e2e_lib",
+    testonly = True,
+    srcs = [":app.spec.ts"],
+    deps = [
+        "@npm//@types/jasmine",
+        "@npm//jasmine",
+        "@npm//protractor",
+    ],
+)
+
+protractor_web_test_suite(
+    name = "e2e",
+    on_prepare = ":protractor.on-prepare.js",
+    server = "//src:devserver",
+    deps = [":e2e_lib"],
+)

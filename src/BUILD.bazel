@@ -17,6 +17,7 @@ ts_devserver(
     name = "devserver",
     index_html = "index.html",
     port = 4200,
+    visibility = ["//src:__subpackages__"],
     deps = [
         ":app_bundle.es2015.js",
     ],
