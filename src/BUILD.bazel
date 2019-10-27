@@ -1,5 +1,6 @@
 load("@build_bazel_rules_nodejs//:defs.bzl", "rollup_bundle")
 load("@npm_bazel_typescript//:index.bzl", "ts_devserver")
+load("@npm_bazel_terser//:index.bzl", "terser_minified")
 
 exports_files(
     ["tsconfig.json"],
@@ -11,6 +12,11 @@ rollup_bundle(
     enable_code_splitting = False,
     entry_point = "//src/app:birthday_card.ts",
     deps = ["//src/app"],
+)
+
+terser_minified(
+    name = "app_bundle_min",
+    src = ":app_bundle.es2015.js",
 )
 
 ts_devserver(
