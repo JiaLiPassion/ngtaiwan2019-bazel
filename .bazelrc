@@ -20,6 +20,9 @@ query --output=label_kind
 # file instead.
 test --test_output=errors
 
+build --incompatible_strict_action_env
+run --incompatible_strict_action_env
+
 ###############################
 # Typescript / Angular / Sass #
 ###############################
