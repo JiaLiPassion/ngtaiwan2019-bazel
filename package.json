@@ -30,7 +30,7 @@
     "@types/jasmine": "^3.4.4",
     "jasmine": "^3.5.0",
     "jasmine-core": "^3.5.0",
-    "karma": "^4.4.1",
+    "karma": "^6.3.16",
     "protractor": "^5.4.2",
     "rollup": "^1.1.0",
     "terser": "^4.3.9",
