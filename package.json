@@ -33,7 +33,7 @@
     "karma": "^4.4.1",
     "protractor": "^5.4.2",
     "rollup": "^1.1.0",
-    "terser": "^4.3.9",
+    "terser": "^4.8.1",
     "typescript": "^3.6.4"
   }
 }
